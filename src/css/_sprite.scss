@@ -1,0 +1,124 @@
+// SCSS variables are information about icon's compiled state, stored under its original file name
+//
+// .icon-home {
+//   width: $icon-home-width;
+// }
+//
+// The large array-like variables contain all information about a single icon
+// $icon-home: x y offset_x offset_y width height total_width total_height image_path;
+//
+// At the bottom of this section, we provide information about the spritesheet itself
+// $spritesheet: width height image $spritesheet-sprites;
+$partner-icon-coffee-name: 'partner-icon-coffee';
+
+$partner-icon-coffee-x: 0px;
+$partner-icon-coffee-y: 0px;
+$partner-icon-coffee-offset-x: 0px;
+$partner-icon-coffee-offset-y: 0px;
+$partner-icon-coffee-width: 17px;
+$partner-icon-coffee-height: 17px;
+$partner-icon-coffee-total-width: 34px;
+$partner-icon-coffee-total-height: 33px;
+$partner-icon-coffee-image: 'sprite.png';
+$partner-icon-coffee: (0px, 0px, 0px, 0px, 17px, 17px, 34px, 33px, 'sprite.png', 'partner-icon-coffee', );
+$partner-icon-msg-name: 'partner-icon-msg';
+$partner-icon-msg-x: 0px;
+$partner-icon-msg-y: 17px;
+$partner-icon-msg-offset-x: 0px;
+$partner-icon-msg-offset-y: -17px;
+$partner-icon-msg-width: 17px;
+$partner-icon-msg-height: 16px;
+$partner-icon-msg-total-width: 34px;
+$partner-icon-msg-total-height: 33px;
+$partner-icon-msg-image: 'sprite.png';
+$partner-icon-msg: (0px, 17px, 0px, -17px, 17px, 16px, 34px, 33px, 'sprite.png', 'partner-icon-msg', );
+$partner-icon-science-name: 'partner-icon-science';
+$partner-icon-science-x: 17px;
+$partner-icon-science-y: 17px;
+$partner-icon-science-offset-x: -17px;
+$partner-icon-science-offset-y: -17px;
+$partner-icon-science-width: 13px;
+$partner-icon-science-height: 16px;
+$partner-icon-science-total-width: 34px;
+$partner-icon-science-total-height: 33px;
+$partner-icon-science-image: 'sprite.png';
+$partner-icon-science: (17px, 17px, -17px, -17px, 13px, 16px, 34px, 33px, 'sprite.png', 'partner-icon-science', );
+$partner-icon-tv-name: 'partner-icon-tv';
+$partner-icon-tv-x: 17px;
+$partner-icon-tv-y: 0px;
+$partner-icon-tv-offset-x: -17px;
+$partner-icon-tv-offset-y: 0px;
+$partner-icon-tv-width: 17px;
+$partner-icon-tv-height: 17px;
+$partner-icon-tv-total-width: 34px;
+$partner-icon-tv-total-height: 33px;
+$partner-icon-tv-image: 'sprite.png';
+$partner-icon-tv: (17px, 0px, -17px, 0px, 17px, 17px, 34px, 33px, 'sprite.png', 'partner-icon-tv', );
+$spritesheet-width: 34px;
+$spritesheet-height: 33px;
+$spritesheet-image: 'sprite.png';
+$spritesheet-sprites: ($partner-icon-coffee, $partner-icon-msg, $partner-icon-science, $partner-icon-tv, );
+$spritesheet: (34px, 33px, 'sprite.png', $spritesheet-sprites, );
+
+// The provided mixins are intended to be used with the array-like variables
+//
+// .icon-home {
+//   @include sprite-width($icon-home);
+// }
+//
+// .icon-email {
+//   @include sprite($icon-email);
+// }
+//
+// Example usage in HTML:
+//
+// `display: block` sprite:
+// <div class="icon-home"></div>
+//
+// To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+//
+// // CSS
+// .icon {
+//   display: inline-block;
+// }
+//
+// // HTML
+// <i class="icon icon-home"></i>
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(../img/#{$sprite-image});
+}
+
+@mixin sprite($sprite) {
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}
+
+// The `sprites` mixin generates identical output to the CSS template
+//   but can be overridden inside of SCSS
+//
+// @include sprites($spritesheet-sprites);
+@mixin sprites($sprites) {
+  @each $sprite in $sprites {
+    $sprite-name: nth($sprite, 10);
+    .#{$sprite-name} {
+      @include sprite($sprite);
+    }
+  }
+}

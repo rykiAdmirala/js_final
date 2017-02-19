@@ -1,0 +1,10 @@
+@import 'sprite';
+
+$blue: red;
+body {
+	background-color: #000;
+	hello: red;
+}
+.holla {
+	@include sprite($partner-icon-msg);
+}
