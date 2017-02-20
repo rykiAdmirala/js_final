@@ -12,15 +12,13 @@ gulp.task('sprite', function () {
   }));
   
   spriteData.img.pipe(gulp.dest('src/img/'));
-  var stream = spriteData.css.pipe(gulp.dest('src/css/'));
-  return stream;
+  return spriteData.css.pipe(gulp.dest('src/css/'));
 });
 
 gulp.task('image', function () {
-  var stream = gulp.src('src/img/*.*')
+  return gulp.src('src/img/*.*')
     .pipe(image())
-    .pipe(gulp.dest('build/img/'));
-  return stream;
+    .pipe(gulp.dest('www/img/'));
 });
 
 gulp.task('sass', function () {
@@ -28,7 +26,7 @@ gulp.task('sass', function () {
   .pipe(sourcemaps.init())
   .pipe(sass().on('error', sass.logError))
   .pipe(sourcemaps.write())
-  .pipe(gulp.dest('build/css'))
+  .pipe(gulp.dest('www/css'))
   .pipe(livereload());
 });
 

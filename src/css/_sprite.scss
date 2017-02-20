@@ -9,55 +9,54 @@
 //
 // At the bottom of this section, we provide information about the spritesheet itself
 // $spritesheet: width height image $spritesheet-sprites;
-$partner-icon-coffee-name: 'partner-icon-coffee';
-
-$partner-icon-coffee-x: 0px;
-$partner-icon-coffee-y: 0px;
-$partner-icon-coffee-offset-x: 0px;
-$partner-icon-coffee-offset-y: 0px;
-$partner-icon-coffee-width: 17px;
-$partner-icon-coffee-height: 17px;
-$partner-icon-coffee-total-width: 34px;
-$partner-icon-coffee-total-height: 33px;
-$partner-icon-coffee-image: 'sprite.png';
-$partner-icon-coffee: (0px, 0px, 0px, 0px, 17px, 17px, 34px, 33px, 'sprite.png', 'partner-icon-coffee', );
-$partner-icon-msg-name: 'partner-icon-msg';
-$partner-icon-msg-x: 0px;
-$partner-icon-msg-y: 17px;
-$partner-icon-msg-offset-x: 0px;
-$partner-icon-msg-offset-y: -17px;
-$partner-icon-msg-width: 17px;
-$partner-icon-msg-height: 16px;
-$partner-icon-msg-total-width: 34px;
-$partner-icon-msg-total-height: 33px;
-$partner-icon-msg-image: 'sprite.png';
-$partner-icon-msg: (0px, 17px, 0px, -17px, 17px, 16px, 34px, 33px, 'sprite.png', 'partner-icon-msg', );
-$partner-icon-science-name: 'partner-icon-science';
-$partner-icon-science-x: 17px;
-$partner-icon-science-y: 17px;
-$partner-icon-science-offset-x: -17px;
-$partner-icon-science-offset-y: -17px;
-$partner-icon-science-width: 13px;
-$partner-icon-science-height: 16px;
-$partner-icon-science-total-width: 34px;
-$partner-icon-science-total-height: 33px;
-$partner-icon-science-image: 'sprite.png';
-$partner-icon-science: (17px, 17px, -17px, -17px, 13px, 16px, 34px, 33px, 'sprite.png', 'partner-icon-science', );
-$partner-icon-tv-name: 'partner-icon-tv';
-$partner-icon-tv-x: 17px;
-$partner-icon-tv-y: 0px;
-$partner-icon-tv-offset-x: -17px;
-$partner-icon-tv-offset-y: 0px;
-$partner-icon-tv-width: 17px;
-$partner-icon-tv-height: 17px;
-$partner-icon-tv-total-width: 34px;
-$partner-icon-tv-total-height: 33px;
-$partner-icon-tv-image: 'sprite.png';
-$partner-icon-tv: (17px, 0px, -17px, 0px, 17px, 17px, 34px, 33px, 'sprite.png', 'partner-icon-tv', );
+$partner-hobby-coffee-name: 'partner-hobby-coffee';
+$partner-hobby-coffee-x: 0px;
+$partner-hobby-coffee-y: 0px;
+$partner-hobby-coffee-offset-x: 0px;
+$partner-hobby-coffee-offset-y: 0px;
+$partner-hobby-coffee-width: 17px;
+$partner-hobby-coffee-height: 17px;
+$partner-hobby-coffee-total-width: 34px;
+$partner-hobby-coffee-total-height: 33px;
+$partner-hobby-coffee-image: 'sprite.png';
+$partner-hobby-coffee: (0px, 0px, 0px, 0px, 17px, 17px, 34px, 33px, 'sprite.png', 'partner-hobby-coffee', );
+$partner-hobby-msg-name: 'partner-hobby-msg';
+$partner-hobby-msg-x: 0px;
+$partner-hobby-msg-y: 17px;
+$partner-hobby-msg-offset-x: 0px;
+$partner-hobby-msg-offset-y: -17px;
+$partner-hobby-msg-width: 17px;
+$partner-hobby-msg-height: 16px;
+$partner-hobby-msg-total-width: 34px;
+$partner-hobby-msg-total-height: 33px;
+$partner-hobby-msg-image: 'sprite.png';
+$partner-hobby-msg: (0px, 17px, 0px, -17px, 17px, 16px, 34px, 33px, 'sprite.png', 'partner-hobby-msg', );
+$partner-hobby-science-name: 'partner-hobby-science';
+$partner-hobby-science-x: 17px;
+$partner-hobby-science-y: 17px;
+$partner-hobby-science-offset-x: -17px;
+$partner-hobby-science-offset-y: -17px;
+$partner-hobby-science-width: 13px;
+$partner-hobby-science-height: 16px;
+$partner-hobby-science-total-width: 34px;
+$partner-hobby-science-total-height: 33px;
+$partner-hobby-science-image: 'sprite.png';
+$partner-hobby-science: (17px, 17px, -17px, -17px, 13px, 16px, 34px, 33px, 'sprite.png', 'partner-hobby-science', );
+$partner-hobby-tv-name: 'partner-hobby-tv';
+$partner-hobby-tv-x: 17px;
+$partner-hobby-tv-y: 0px;
+$partner-hobby-tv-offset-x: -17px;
+$partner-hobby-tv-offset-y: 0px;
+$partner-hobby-tv-width: 17px;
+$partner-hobby-tv-height: 17px;
+$partner-hobby-tv-total-width: 34px;
+$partner-hobby-tv-total-height: 33px;
+$partner-hobby-tv-image: 'sprite.png';
+$partner-hobby-tv: (17px, 0px, -17px, 0px, 17px, 17px, 34px, 33px, 'sprite.png', 'partner-hobby-tv', );
 $spritesheet-width: 34px;
 $spritesheet-height: 33px;
 $spritesheet-image: 'sprite.png';
-$spritesheet-sprites: ($partner-icon-coffee, $partner-icon-msg, $partner-icon-science, $partner-icon-tv, );
+$spritesheet-sprites: ($partner-hobby-coffee, $partner-hobby-msg, $partner-hobby-science, $partner-hobby-tv, );
 $spritesheet: (34px, 33px, 'sprite.png', $spritesheet-sprites, );
 
 // The provided mixins are intended to be used with the array-like variables
@@ -100,7 +99,7 @@ $spritesheet: (34px, 33px, 'sprite.png', $spritesheet-sprites, );
 
 @mixin sprite-image($sprite) {
   $sprite-image: nth($sprite, 9);
-  background-image: url(../img/#{$sprite-image});
+  background-image: url(#{$sprite-image});
 }
 
 @mixin sprite($sprite) {

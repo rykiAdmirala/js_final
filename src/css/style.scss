@@ -1,10 +1,284 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,700|Roboto:300');
+@import 'reset';
 @import 'sprite';
 
-$blue: red;
-body {
-	background-color: #000;
-	hello: red;
+$Montserrat 	: 'Montserrat', sans-serif;
+$Roboto 		: 'Roboto', sans-serif;
+$baseColor			: #ff4e50;
+$btnBorderRad 	: 20px;
+
+@mixin sprite($sprite) {
+	$sprite-image: nth($sprite, 9);
+	$sprite-height: nth($sprite, 6);
+	$sprite-width: nth($sprite, 5);
+	content: url(../img/#{$sprite-image});
+	margin-top: $sprite-height / 2;
+	margin-left: $sprite-width / 2;
 }
-.holla {
-	@include sprite($partner-icon-msg);
+
+%display-inline-block {
+	display: inline-block;
+	vertical-align: top;
+}
+
+
+body {
+	font: 700 14px $Montserrat;
+}
+section {
+	max-width: 320px;
+	margin: 0 auto;
+}
+.wrapper {
+	max-width: 300px;
+	margin: 0 auto;
+}
+.section__title {
+	font-size: 22px;
+}
+.btn {
+	background: $baseColor;
+	border: 0;
+	border-radius: $btnBorderRad;
+	color: #fff;
+	line-height: 40px;
+}
+.promo {
+	min-height: 540px;
+	padding: 20px 0;
+	background: url(../img/promo-bg-mobile.jpg) center center;
+	color: #fff;
+	text-align: center;
+
+	.wrapper {
+		max-width: 280px;
+	}
+
+
+	@at-root .actions {
+		&__btn {
+			@extend %display-inline-block;
+
+			&--login {
+				line-height: 34px;
+			}
+
+			&--signup {
+				padding: 0 15px;
+				border: 2px solid #fff;
+				border-radius: $btnBorderRad;
+				line-height: 32px;
+			}
+		}	
+	}
+
+	&__title {
+		margin: 112px 0 0;
+		font-size: 20px;
+		text-transform: uppercase;
+	}
+
+	&__slogan {
+		margin: 40px 0 0;
+		font-size: 30px;
+		text-transform: uppercase;
+	}
+
+	&__text {
+		margin: 20px 0 0;
+		font: 18px $Roboto;
+	}
+
+	&__btn {
+		display: block;
+		max-width: 280px;
+	}
+}
+
+.how-we-work {
+	padding: 40px 0;
+
+	.section__title {
+		margin: 0 0 20px;
+	}
+}
+.hww-item {
+	position: relative;
+	height: 240px;
+	margin: 0 0 10px;
+	padding: 100px 20px 20px;
+	background: url(../img/hww-step1.jpg) center center no-repeat;
+	border-radius: 4px;
+	color: #fff;
+	
+	&--2 {
+		background-image: url(../img/hww-step2.jpg);
+	}
+
+	&--3 {
+		background-image: url(../img/hww-step3.jpg);
+	}
+
+	&:after {
+		content: '';
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		background: linear-gradient( rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 100%);
+	}
+
+	&__step {
+		@extend .btn;
+		max-width: 70px;
+		font: 300 10px $Montserrat;
+		line-height: 20px;
+		text-align: center;
+		text-transform: uppercase;
+	}
+
+	&__title {
+		margin: 20px 0 0;
+		font-size: 24px;
+	}
+
+	&__desc {
+		margin: 20px 0 0;
+		font: 300 14px $Roboto;
+	}
+}
+
+.partners {
+	padding: 30px 0 0;
+}
+
+.partner {
+	margin: 20px 0 0;
+	text-align: center;
+
+	&__img {
+		position: relative;
+		width: 120px;
+		height: 120px;
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+
+	&__hobby {
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		width: 30px;
+		height: 30px;
+		background: #000;
+		border: 4px solid #fff;
+		border-radius: 50%;
+
+		&:after {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+		}
+
+		&--tv:after {
+			@include sprite($partner-hobby-tv);
+		}
+		&--science:after {
+			@include sprite($partner-hobby-science);
+		}
+		&--coffee:after {
+			@include sprite($partner-hobby-coffee);
+		}
+		&--msg:after {
+			@include sprite($partner-hobby-msg);
+		}
+	}
+
+	&__name {
+		margin: 20px;
+	}
+
+	&__desc {
+		margin: 15px;
+		font: 300 14px $Roboto;
+	}
+
+	&__btn {
+		background: transparent;
+		color: $baseColor;
+	}
+}
+
+.ideas {
+	padding: 30px 0;
+}
+
+.search {
+	padding: 30px 0 40px;
+	text-align: center;
+}
+.search-form {
+	margin: 18px 0 0;
+	
+	&__title {
+		font: 300 17px $Roboto;
+	}
+
+	&__input {
+		margin: 15px 0 0;
+		padding: 0 15px;
+		border: 1px solid #ccc;
+		border-radius: 4px;
+		box-shadow: 0px 1px 0px 0px rgba(238, 238, 238, 0.004);
+		line-height: 38px;
+	}
+
+	&__btn {
+		margin: 10px 0 0;
+	}
+}
+
+.footer {
+	padding: 15px 0;
+	border-top: 4px solid $baseColor;
+	text-align: center;
+
+	&__title {
+		color: $baseColor;
+		font-size: 16px;
+		text-transform: uppercase;
+	}
+
+	&__heading {
+		margin: 15px 0 0;
+	}
+
+	&__menu {
+		li {
+			@extend %display-inline-block;
+		}
+		a {
+			display: block;
+			margin: 0 6px;
+			color: #666;
+			font: 300 14px $Roboto;
+		}
+	}
+}
+.partner-small {
+	margin: 20px 0 0;
+
+	&__desc {
+		font-size: 10px;
+		color: #ccc;
+		text-transform: uppercase;
+	}
+	&__img {
+		margin: 10px 0 0;
+	}
 }
