@@ -4,17 +4,25 @@
 
 $Montserrat 	: 'Montserrat', sans-serif;
 $Roboto 		: 'Roboto', sans-serif;
-$baseColor			: #ff4e50;
+$baseColor		: #ff4e50;
 $btnBorderRad 	: 20px;
+
 
 @mixin sprite($sprite) {
 	$sprite-image: nth($sprite, 9);
 	$sprite-height: nth($sprite, 6);
 	$sprite-width: nth($sprite, 5);
-	content: url(../img/#{$sprite-image});
-	margin-top: $sprite-height / 2;
-	margin-left: $sprite-width / 2;
+	content: '';
+	display: block;
+	background: url(../img/#{$sprite-image});
+	@include sprite-position($sprite);
+	width: $sprite-width;
+	height: $sprite-height;
+	margin-left: -$sprite-width / 2;
+	margin-top: -$sprite-height / 2;
+	overflow: hidden;
 }
+
 
 %display-inline-block {
 	display: inline-block;
@@ -25,18 +33,17 @@ $btnBorderRad 	: 20px;
 body {
 	font: 700 14px $Montserrat;
 }
-section {
-	max-width: 320px;
-	margin: 0 auto;
-}
 .wrapper {
 	max-width: 300px;
 	margin: 0 auto;
 }
 .section__title {
 	font-size: 22px;
+	text-align: center;
 }
 .btn {
+	display: inline-block;
+	width: 280px;
 	background: $baseColor;
 	border: 0;
 	border-radius: $btnBorderRad;
@@ -46,7 +53,7 @@ section {
 .promo {
 	min-height: 540px;
 	padding: 20px 0;
-	background: url(../img/promo-bg-mobile.jpg) center center;
+	background: #1a1915 url(../img/promo-bg.png) center top;
 	color: #fff;
 	text-align: center;
 
@@ -58,12 +65,14 @@ section {
 	@at-root .actions {
 		&__btn {
 			@extend %display-inline-block;
+			color: #fff;
 
 			&--login {
 				line-height: 34px;
 			}
 
 			&--signup {
+				margin: 0 0 0 20px;
 				padding: 0 15px;
 				border: 2px solid #fff;
 				border-radius: $btnBorderRad;
@@ -80,7 +89,7 @@ section {
 
 	&__slogan {
 		margin: 40px 0 0;
-		font-size: 30px;
+		font-size: 29px;
 		text-transform: uppercase;
 	}
 
@@ -90,8 +99,7 @@ section {
 	}
 
 	&__btn {
-		display: block;
-		max-width: 280px;
+		margin: 15px 0 0;
 	}
 }
 
@@ -106,11 +114,12 @@ section {
 	position: relative;
 	height: 240px;
 	margin: 0 0 10px;
-	padding: 100px 20px 20px;
+	padding: 70px 20px 20px;
 	background: url(../img/hww-step1.jpg) center center no-repeat;
 	border-radius: 4px;
 	color: #fff;
-	
+	overflow: hidden;
+
 	&--2 {
 		background-image: url(../img/hww-step2.jpg);
 	}
@@ -119,38 +128,52 @@ section {
 		background-image: url(../img/hww-step3.jpg);
 	}
 
-	&:after {
+	&:before {
 		content: '';
 		position: absolute;
 		top: 0;
 		bottom: 0;
 		left: 0;
 		right: 0;
-		background: linear-gradient( rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 100%);
+		background: linear-gradient(rgba(0,0,0,0) 40%, rgba(0,0,0,0.6) 120%);
+		z-index: 0;
 	}
 
 	&__step {
 		@extend .btn;
+		position: relative;
 		max-width: 70px;
 		font: 300 10px $Montserrat;
 		line-height: 20px;
 		text-align: center;
 		text-transform: uppercase;
+		z-index: 99;
 	}
 
 	&__title {
-		margin: 20px 0 0;
+		position: relative;
+		margin: 10px 0 0;
 		font-size: 24px;
 	}
 
 	&__desc {
-		margin: 20px 0 0;
+		position: relative;
+		margin: 10px 0 0;
+		color: #ccc;
 		font: 300 14px $Roboto;
 	}
 }
 
 .partners {
 	padding: 30px 0 0;
+	text-align: center;
+
+	&__btn {
+		background: transparent;
+		border: 2px solid;
+		color: $baseColor;
+		line-height: 38px;
+	}
 }
 
 .partner {
@@ -158,6 +181,7 @@ section {
 	text-align: center;
 
 	&__img {
+		@extend %display-inline-block;
 		position: relative;
 		width: 120px;
 		height: 120px;
@@ -173,8 +197,8 @@ section {
 		position: absolute;
 		right: 0;
 		bottom: 0;
-		width: 30px;
-		height: 30px;
+		width: 35px;
+		height: 35px;
 		background: #000;
 		border: 4px solid #fff;
 		border-radius: 50%;
@@ -185,17 +209,33 @@ section {
 			left: 50%;
 		}
 
-		&--tv:after {
-			@include sprite($partner-hobby-tv);
+		&--tv {
+			background: $baseColor;
+			
+			&:after {
+				@include sprite($partner-hobby-tv);
+			}
 		}
-		&--science:after {
-			@include sprite($partner-hobby-science);
+		&--science {
+			background: #ffa507;
+
+			&:after {
+				@include sprite($partner-hobby-science);
+			}
 		}
-		&--coffee:after {
-			@include sprite($partner-hobby-coffee);
+		&--coffee {
+			background: #1cd7ad;
+
+			&:after {
+				@include sprite($partner-hobby-coffee);
+			}
 		}
-		&--msg:after {
-			@include sprite($partner-hobby-msg);
+		&--msg {
+			background: #4e73db;
+
+			&:after {
+				@include sprite($partner-hobby-msg);
+			}
 		}
 	}
 
@@ -205,17 +245,28 @@ section {
 
 	&__desc {
 		margin: 15px;
+		color: #666;
 		font: 300 14px $Roboto;
-	}
-
-	&__btn {
-		background: transparent;
-		color: $baseColor;
 	}
 }
 
 .ideas {
 	padding: 30px 0;
+	text-align: center;
+
+	&__item {
+		position: relative;
+	}
+
+	&__text {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		display: table-cell;
+		vertical-align: middle;
+	}
 }
 
 .search {
@@ -230,16 +281,26 @@ section {
 	}
 
 	&__input {
+		width: 100%;
+		max-width: 280px;
 		margin: 15px 0 0;
 		padding: 0 15px;
 		border: 1px solid #ccc;
 		border-radius: 4px;
 		box-shadow: 0px 1px 0px 0px rgba(238, 238, 238, 0.004);
 		line-height: 38px;
+		font-family: $Roboto;
+		font-weight: 300;
+
+		&:focus {
+			outline: none;
+		}
 	}
 
 	&__btn {
 		margin: 10px 0 0;
+		font-family: $Montserrat;
+		font-weight: 700;
 	}
 }
 
