@@ -23,6 +23,17 @@ $btnBorderRad 	: 20px;
 	overflow: hidden;
 }
 
+@mixin media($break) {
+	@if $break == tablet {
+		@media (min-width: 768px) { @content; }
+	}
+	@else if $break == desktop {
+		@media (min-width: 940px) { @content; }
+	}
+	@else if $break {
+		@media (min-width: $break) { @content; }
+	}
+}
 
 %display-inline-block {
 	display: inline-block;
@@ -32,10 +43,15 @@ $btnBorderRad 	: 20px;
 
 body {
 	font: 700 14px $Montserrat;
+	letter-spacing: .1px;
 }
 .wrapper {
-	max-width: 300px;
+	min-width: 300px;
 	margin: 0 auto;
+
+	@include media(tablet) {
+		max-width: 748px;
+	}
 }
 .section__title {
 	font-size: 22px;
@@ -53,12 +69,13 @@ body {
 .promo {
 	min-height: 540px;
 	padding: 20px 0;
-	background: #1a1915 url(../img/promo-bg.png) center top;
+	background: url(../img/promo-bg.jpg) 48.5% -10px;
 	color: #fff;
 	text-align: center;
 
-	.wrapper {
-		max-width: 280px;
+	@include media(tablet) {
+		min-height: 700px;
+		background-position: center top;
 	}
 
 
@@ -66,13 +83,14 @@ body {
 		&__btn {
 			@extend %display-inline-block;
 			color: #fff;
+			letter-spacing: 0.2px;
 
 			&--login {
-				line-height: 34px;
+				line-height: 36px;
 			}
 
 			&--signup {
-				margin: 0 0 0 20px;
+				margin: 0 0 0 16px;
 				padding: 0 15px;
 				border: 2px solid #fff;
 				border-radius: $btnBorderRad;
@@ -82,49 +100,70 @@ body {
 	}
 
 	&__title {
-		margin: 112px 0 0;
-		font-size: 20px;
+		margin: 115px 0 0;
+		font-size: 21px;
 		text-transform: uppercase;
+		letter-spacing: 0.3px;
 	}
 
 	&__slogan {
-		margin: 40px 0 0;
+		margin: 28px 0 0;
 		font-size: 29px;
 		text-transform: uppercase;
+		letter-spacing: 0.9px;
 	}
 
 	&__text {
-		margin: 20px 0 0;
-		font: 18px $Roboto;
+		margin: 10px auto 0;
+		padding: 0 35px;
+		font: 18px/1.2 $Roboto;
 	}
 
 	&__btn {
-		margin: 15px 0 0;
+		margin: 16px 0 0;
+		letter-spacing: 0.1px;
 	}
 }
 
 .how-we-work {
-	padding: 40px 0;
+	padding: 34px 0 20px;
 
 	.section__title {
-		margin: 0 0 20px;
+		margin: 0 0 14px;
 	}
 }
+.hww-item__block {
+	text-align: center;
+}
+
 .hww-item {
 	position: relative;
 	height: 240px;
-	margin: 0 0 10px;
-	padding: 70px 20px 20px;
+	max-width: 300px;
+	margin: 0 auto 10px;
+	padding: 68px 18px 20px;
 	background: url(../img/hww-step1.jpg) center center no-repeat;
 	border-radius: 4px;
 	color: #fff;
+	text-align: left;
 	overflow: hidden;
 
-	&--2 {
+	@include media(650px) {
+		display: inline-block;
+		vertical-align: top;
+
+		&:nth-child(2) {
+			margin-left: 20px;
+			margin-bottom: 20px;
+		}
+	}
+
+	&:nth-child(2) {
+		padding-top: 99px;
 		background-image: url(../img/hww-step2.jpg);
 	}
 
-	&--3 {
+	&:nth-child(3) {
 		background-image: url(../img/hww-step3.jpg);
 	}
 
@@ -135,7 +174,7 @@ body {
 		bottom: 0;
 		left: 0;
 		right: 0;
-		background: linear-gradient(rgba(0,0,0,0) 40%, rgba(0,0,0,0.6) 120%);
+		background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.6));
 		z-index: 0;
 	}
 
@@ -145,6 +184,7 @@ body {
 		max-width: 70px;
 		font: 300 10px $Montserrat;
 		line-height: 20px;
+		letter-spacing: 1.6px;
 		text-align: center;
 		text-transform: uppercase;
 		z-index: 99;
@@ -152,23 +192,28 @@ body {
 
 	&__title {
 		position: relative;
-		margin: 10px 0 0;
+		margin: 14px 0 0;
 		font-size: 24px;
 	}
 
 	&__desc {
 		position: relative;
-		margin: 10px 0 0;
+		margin: 12px 0 0;
 		color: #ccc;
-		font: 300 14px $Roboto;
+		font: 300 14px/17px $Roboto;
 	}
 }
 
 .partners {
-	padding: 30px 0 0;
+	padding: 4px 0 0;
 	text-align: center;
 
+	.section__title {
+		margin-bottom: 13px;
+	}
+
 	&__btn {
+		margin-left: -3px;
 		background: transparent;
 		border: 2px solid;
 		color: $baseColor;
@@ -177,7 +222,8 @@ body {
 }
 
 .partner {
-	margin: 20px 0 0;
+	max-width: 300px;
+	margin: 0 auto 27px;
 	text-align: center;
 
 	&__img {
@@ -195,10 +241,10 @@ body {
 
 	&__hobby {
 		position: absolute;
-		right: 0;
-		bottom: 0;
-		width: 35px;
-		height: 35px;
+		right: -3px;
+		bottom: -4px;
+		width: 39px;
+		height: 39px;
 		background: #000;
 		border: 4px solid #fff;
 		border-radius: 50%;
@@ -240,50 +286,71 @@ body {
 	}
 
 	&__name {
-		margin: 20px;
+		margin: 19px 0 0;
 	}
 
 	&__desc {
-		margin: 15px;
+		max-width: 73%;
+		margin: 13px auto 0;
 		color: #666;
-		font: 300 14px $Roboto;
+		font: 300 14px/1.2 $Roboto;
 	}
 }
 
 .ideas {
-	padding: 30px 0;
+	padding: 33px 0 10px;
 	text-align: center;
+
+	.section__title {
+		margin: 0 0 12px;
+	}
 
 	&__item {
 		position: relative;
+		max-width: 300px;
+		height: 120px;
+		margin: 0 auto 10px;
+		border-radius: 4px;
+		overflow: hidden;
+
+		img {
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: -1;
+		}
+	}
+
+	&__center {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 100%;
 	}
 
 	&__text {
-		position: absolute;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		left: 0;
-		display: table-cell;
-		vertical-align: middle;
+		padding: 0 10px;
+		color: #fff;
+		font-size: 22px;
 	}
 }
 
 .search {
-	padding: 30px 0 40px;
+	padding: 16px 0 39px;
 	text-align: center;
 }
 .search-form {
-	margin: 18px 0 0;
+	margin: 9px 0 0;
 	
 	&__title {
-		font: 300 17px $Roboto;
+		font: 300 18px $Roboto;
 	}
 
 	&__input {
+		display: block;
 		width: 100%;
 		max-width: 280px;
-		margin: 15px 0 0;
+		margin: 14px auto 0;
 		padding: 0 15px;
 		border: 1px solid #ccc;
 		border-radius: 4px;
@@ -298,14 +365,15 @@ body {
 	}
 
 	&__btn {
-		margin: 10px 0 0;
+		display: block;
+		margin: 9px auto 0;
 		font-family: $Montserrat;
 		font-weight: 700;
 	}
 }
 
 .footer {
-	padding: 15px 0;
+	padding: 16px 0;
 	border-top: 4px solid $baseColor;
 	text-align: center;
 
@@ -316,7 +384,7 @@ body {
 	}
 
 	&__heading {
-		margin: 15px 0 0;
+		margin: 12px 0 0;
 	}
 
 	&__menu {
@@ -332,7 +400,7 @@ body {
 	}
 }
 .partner-small {
-	margin: 20px 0 0;
+	margin: 13px 0 0;
 
 	&__desc {
 		font-size: 10px;
@@ -340,6 +408,6 @@ body {
 		text-transform: uppercase;
 	}
 	&__img {
-		margin: 10px 0 0;
+		margin: 8px 0 0;
 	}
 }
