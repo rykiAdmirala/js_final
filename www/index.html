@@ -5,9 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>FINAL EXAM | GOIT FE#6</title>
 
+	<link rel="stylesheet" href="https://npmcdn.com/flickity@1.2/dist/flickity.min.css">
 	<link rel="stylesheet" href="css/style.css">
-	
-	<!-- <script src="js/script.js"></script> -->
+
+	<script src="https://cdn.jsdelivr.net/lodash/4.17.4/lodash.min.js"></script>
+	<script src="https://npmcdn.com/flickity@1.2/dist/flickity.pkgd.min.js"></script>
+	<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+	<script src="js/script.js"></script>
 
 </head>
 <body>
@@ -44,41 +48,147 @@
 		How Urlaubsglück works?
 	</div>
 
-	<div class="hww-item__block">
+	<div class="hww-items">
 		<div class="hww-item">
-			<div class="hww-item__step">
-				Step 1
+			<div class="hww-item__slider">
+				<div class="hww-item__slide hww-item__slide--step1">
+					<div class="hww-item__content">
+						<div class="hww-item__step">
+							Step 1
+						</div>
+						<div class="hww-item__title">
+							Sed leo enim, condimentum
+						</div>
+						<div class="hww-item__desc">
+							Quisque libero libero, dictum non turpis in, luctus semper lorem. Donec rhoncus a leo sit amet facilisis.
+						</div>
+					</div>
+				</div>
+				<div class="hww-item__slide hww-item__slide--step2">
+					<div class="hww-item__content">
+						<div class="hww-item__step">
+							Step 2
+						</div>
+						<div class="hww-item__title">
+							Morbi velit risus
+						</div>
+						<div class="hww-item__desc">
+							Nulla venenatis tempor dui in molestie. Nulla quis dictum purus, sit amet porttitor est.
+						</div>
+					</div>
+				</div>
+				<div class="hww-item__slide hww-item__slide--step3">
+					<div class="hww-item__content">
+						<div class="hww-item__step">
+							Step 3
+						</div>
+						<div class="hww-item__title">
+							Sed leo enim, condimentum
+						</div>
+						<div class="hww-item__desc">
+							Quisque libero libero, dictum non turpis in, luctus semper lorem. Donec rhoncus a leo sit amet facilisis.
+						</div>
+					</div>
+				</div>
 			</div>
-			<div class="hww-item__title">
-				Sed leo enim, condimentum
-			</div>
-			<div class="hww-item__desc">
-				Quisque libero libero, dictum non turpis in, luctus semper lorem. Donec rhoncus a leo sit amet facilisis.
-			</div>
-		</div>
 
-		<div class="hww-item">
-			<div class="hww-item__step">
-				Step 2
-			</div>
-			<div class="hww-item__title">
-				Morbi velit risus
-			</div>
-			<div class="hww-item__desc">
-				Nulla venenatis tempor dui in molestie. Nulla quis dictum purus, sit amet porttitor est.
-			</div>
-		</div>
+			<div class="hww-item__button hww-item__button--prev"></div>
+			<div class="hww-item__button hww-item__button--next"></div>
 
-		<div class="hww-item">
-			<div class="hww-item__step">
-				Step 3
+		</div
+		><div class="hww-item">
+			<div class="hww-item__slider">
+				<div class="hww-item__slide hww-item__slide--step2">
+					<div class="hww-item__content">
+						<div class="hww-item__step">
+							Step 2
+						</div>
+						<div class="hww-item__title">
+							Morbi velit risus
+						</div>
+						<div class="hww-item__desc">
+							Nulla venenatis tempor dui in molestie. Nulla quis dictum purus, sit amet porttitor est.
+						</div>
+					</div>
+				</div>
+				<div class="hww-item__slide hww-item__slide--step3">
+					<div class="hww-item__content">
+						<div class="hww-item__step">
+							Step 3
+						</div>
+						<div class="hww-item__title">
+							Sed leo enim, condimentum
+						</div>
+						<div class="hww-item__desc">
+							Quisque libero libero, dictum non turpis in, luctus semper lorem. Donec rhoncus a leo sit amet facilisis.
+						</div>
+					</div>
+				</div>
+				<div class="hww-item__slide hww-item__slide--step1">
+					<div class="hww-item__content">
+						<div class="hww-item__step">
+							Step 1
+						</div>
+						<div class="hww-item__title">
+							Sed leo enim, condimentum
+						</div>
+						<div class="hww-item__desc">
+							Quisque libero libero, dictum non turpis in, luctus semper lorem. Donec rhoncus a leo sit amet facilisis.
+						</div>
+					</div>
+				</div>
 			</div>
-			<div class="hww-item__title">
-				Sed leo enim, condimentum
+
+			<div class="hww-item__button hww-item__button--prev"></div>
+			<div class="hww-item__button hww-item__button--next"></div>
+
+		</div
+		><div class="hww-item">
+			<div class="hww-item__slider">
+				<div class="hww-item__slide hww-item__slide--step3">
+					<div class="hww-item__content">
+						<div class="hww-item__step">
+							Step 3
+						</div>
+						<div class="hww-item__title">
+							Sed leo enim, condimentum
+						</div>
+						<div class="hww-item__desc">
+							Quisque libero libero, dictum non turpis in, luctus semper lorem. Donec rhoncus a leo sit amet facilisis.
+						</div>
+					</div>
+				</div>
+				<div class="hww-item__slide hww-item__slide--step1">
+					<div class="hww-item__content">
+						<div class="hww-item__step">
+							Step 1
+						</div>
+						<div class="hww-item__title">
+							Sed leo enim, condimentum
+						</div>
+						<div class="hww-item__desc">
+							Quisque libero libero, dictum non turpis in, luctus semper lorem. Donec rhoncus a leo sit amet facilisis.
+						</div>
+					</div>
+				</div>
+				<div class="hww-item__slide hww-item__slide--step2">
+					<div class="hww-item__content">
+						<div class="hww-item__step">
+							Step 2
+						</div>
+						<div class="hww-item__title">
+							Morbi velit risus
+						</div>
+						<div class="hww-item__desc">
+							Nulla venenatis tempor dui in molestie. Nulla quis dictum purus, sit amet porttitor est.
+						</div>
+					</div>
+				</div>
 			</div>
-			<div class="hww-item__desc">
-				Quisque libero libero, dictum non turpis in, luctus semper lorem. Donec rhoncus a leo sit amet facilisis.
-			</div>
+
+			<div class="hww-item__button hww-item__button--prev"></div>
+			<div class="hww-item__button hww-item__button--next"></div>
+
 		</div>
 
 	</div>
@@ -92,7 +202,7 @@
 		Meet a partner for your best holiday
 	</div>
 
-	<div class="partners__block">
+	<div class="partner__wrap">
 		<div class="partner">
 			<div class="partner__img">
 				<img src="img/partner1.png" alt="">
@@ -104,9 +214,9 @@
 			<div class="partner__desc">
 				Based in Chicago. I love playing tennis and loud music.
 			</div>
-		</div>
+		</div
 
-		<div class="partner">
+		><div class="partner">
 			<div class="partner__img">
 				<img src="img/partner2.png" alt="">
 				<div class="partner__hobby partner__hobby--science"></div>
@@ -117,9 +227,9 @@
 			<div class="partner__desc">
 				I get my inspiration from nature and objects around me. I have a passion to colours, typography and skateboards.
 			</div>
-		</div>
+		</div
 
-		<div class="partner">
+		><div class="partner">
 			<div class="partner__img">
 				<img src="img/partner3.png" alt="">
 				<div class="partner__hobby partner__hobby--coffee"></div>
@@ -130,9 +240,9 @@
 			<div class="partner__desc">
 				I'm a happy person that loves cats and climbing on mountains.
 			</div>
-		</div>
+		</div
 
-		<div class="partner">
+		><div class="partner">
 			<div class="partner__img">
 				<img src="img/partner4.png" alt="">
 				<div class="partner__hobby partner__hobby--msg"></div>
@@ -140,7 +250,7 @@
 			<div class="partner__name">
 				Bradley Hunter
 			</div>
-			<div class="partner__desc">
+			<div class="partner__desc">	
 				Based in Chicago. I love playing tennis and loud music.
 			</div>
 		</div>
@@ -159,48 +269,49 @@
 	</div>
 
 	<div class="ideas__block">
-		<div class="ideas__item">
-			<img src="img/idea1.png" alt="">
+		<figure class="ideas__item">
+			<img src="img/idea1.jpg" alt="">
 			<div class="ideas__center">
-				<div class="ideas__text">Sport and Activity</div>
+				<figcaption class="ideas__text">Sport and Activity</figcaption>
 			</div>
-		</div>
-		<div class="ideas__item">
-			<img src="img/idea2.png" alt="">
+		</figure>
+		<figure class="ideas__item">
+			<img src="img/idea2.jpg" alt="">
 			<div class="ideas__center">
-				<div class="ideas__text">Wellnes and Health</div>
+				<figcaption class="ideas__text">Wellnes and Health</figcaption>
 			</div>
-		</div>
-		<div class="ideas__item">
-			<img src="img/idea3.png" alt="">
+		</figure>
+		<figure class="ideas__item">
+			<img src="img/idea3.jpg" alt="">
 			<div class="ideas__center">
-				<div class="ideas__text">Extreme Sports and Expeditions</div>
+				<figcaption class="ideas__text">Extreme Sports and Expeditions</figcaption>
 			</div>
-		</div>
-		<div class="ideas__item">
-			<img src="img/idea4.png" alt="">
+		</figure>
+		<figure class="ideas__item">
+			<img src="img/idea4.jpg" alt="">
 			<div class="ideas__center">
-				<div class="ideas__text">Games</div>
+				<figcaption class="ideas__text">Games</figcaption>
 			</div>
-		</div>
-		<div class="ideas__item">
-			<img src="img/idea5.png" alt="">
+		</figure>
+		<figure class="ideas__item ideas__item--width2">
+			<img src="img/idea5.jpg" alt="">
 			<div class="ideas__center">
-				<div class="ideas__text">Culture and Education</div>
+				<figcaption class="ideas__text">Culture and Education</figcaption>
 			</div>
-		</div>
-		<div class="ideas__item">
-			<img src="img/idea6.png" alt="">
+		</figure>
+		<figure class="ideas__item ideas__item--width2">
+			<img src="img/idea6.jpg" alt="">
 			<div class="ideas__center">
-				<div class="ideas__text">Relaxation</div>
+				<figcaption class="ideas__text">Relaxation</figcaption>
 			</div>
-		</div>
-		<div class="ideas__item">
-			<img src="img/idea7.png" alt="">
+		</figure>
+		<figure class="ideas__item">
+			<img src="img/idea7.jpg" alt="">
 			<div class="ideas__center">
-				<div class="ideas__text">Travelling</div>
+				<figcaption class="ideas__text">Travelling</figcaption>
 			</div>
-		</div>
+		</figure>
+		<div class="ideas__sizer"></div>
 	</div>
 
 </div>
@@ -226,29 +337,48 @@
 
 <section class="footer">
 <div class="wrapper">
-	<div class="footer__title">
+	<div class="footer__block footer__logo">
 		URLAUBSGLÜCK
 	</div>
+	
+	<div class="footer__block">
+		<div class="footer__heading">Company</div>
+		<ul class="footer__menu">
+			<li><a href="#">About</a></li>
+			<li><a href="#">Contacts</a></li>
+			<li><a href="#">Press</a></li>
+			<li><a href="#">Blog</a></li>
+		</ul>
+	</div>
 
-	<div class="footer__heading">Company<div>
-	<ul class="footer__menu">
-		<li><a href="#">About</a></li>
-		<li><a href="#">Contacts</a></li>
-		<li><a href="#">Press</a></li>
-		<li><a href="#">Blog</a></li>
-	</ul>
+	<div class="footer__block">
+		<div class="footer__heading">Partners</div>
+	</div>
 
-	<div class="footer__heading">Partners</div>
-	<div class="partner-small">
-		<div class="partner-small__desc">
+	<div class="design">
+		<div class="design__desc">
 			Designed by
 		</div>
-		<div class="partner-small__img">
+		<div class="design__img">
 			<img src="img/areto.png" alt="Areto">
 		</div>
 	</div>
 </div>		
 </section>
+
+
+
+<script type="text/template" id="ideas__template">
+	<% for (var i = 0; i < data.length; i++) { %><figure
+		class="ideas__item<% if (i==4 || i==5) { %> ideas__item--width2<% } %>">
+			<img src="<%= data[i].webformatURL %>" alt="<%= data[i].tags %>">
+			<div class="ideas__center">
+				<figcaption class="ideas__text"><%= data[i].tags %></figcaption>
+			</div>
+		</figure
+	><% } %>
+    <div class="ideas__sizer"></div>
+</script>
 
 </body>
 </html>

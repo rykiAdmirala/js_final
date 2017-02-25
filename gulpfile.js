@@ -1,18 +1,55 @@
 var gulp = require('gulp'),
+    pump = require('pump');
+    uglifyjs = require('gulp-uglify');
     sass = require('gulp-sass'),
     sourcemaps = require('gulp-sourcemaps'),
+    cleanCSS = require('gulp-clean-css');
+    autoprefixer = require('gulp-autoprefixer');
     livereload = require('gulp-livereload'),
     image = require('gulp-image'),
     spritesmith = require('gulp.spritesmith'),
     cache = require('gulp-cache'),
     del = require('del');
 
-/* Copying HTML */
-gulp.task('html', function() {
-  return gulp.src('src/index.html')
-    .pipe(gulp.dest('www'))
-    .pipe(livereload());
-})
+
+/* Uglifying JS */
+gulp.task('scripts', function(cb) {
+  return pump([
+      gulp.src('src/js/*.js'),
+      // uglifyjs(),
+      gulp.dest('www/js/'),
+      livereload()
+    ],
+    cb
+  );
+});
+
+/* Making Styles */
+gulp.task('styles', function (cb) {
+  return pump([
+      gulp.src('src/css/*.scss'),
+      sourcemaps.init(),
+      sass().on('error', sass.logError),
+      autoprefixer({
+            browsers: ['>0.01%'],
+            cascade: false
+      }),
+      cleanCSS({compatibility: 'ie8'}),
+      sourcemaps.write(),
+      gulp.dest('www/css'),
+      livereload()
+    ],
+    cb
+  );
+});
+
+/* Watching for styles and html changes */
+gulp.task('watch', function () {
+  livereload.listen();
+  gulp.watch('src/js/*.js', gulp.series('scripts'));
+  gulp.watch('src/index.html', gulp.series('html'));
+  return gulp.watch('src/css/*.scss', gulp.series('styles'));
+});
 
 /* Making sprite */
 gulp.task('sprite', function () {
@@ -33,22 +70,14 @@ gulp.task('image', function () {
     .pipe(gulp.dest('www/img/'));
 });
 
-/* Compiling SASS */
-gulp.task('sass', function () {
- return gulp.src('src/css/*.scss')
-  .pipe(sourcemaps.init())
-  .pipe(sass().on('error', sass.logError))
-  .pipe(sourcemaps.write())
-  .pipe(gulp.dest('www/css'))
-  .pipe(livereload());
+/* Copying HTML */
+gulp.task('html', function() {
+  return gulp.src('src/index.html')
+    .pipe(gulp.dest('www'))
+    .pipe(livereload());
 });
 
 
-gulp.task('sass:watch', function () {
-  livereload.listen();
-  gulp.watch('src/index.html', gulp.series('html'));
-  return gulp.watch('src/css/*.scss', gulp.series('sass'));
-});
 
 /* Cleaning */
 gulp.task('clean', function() {
@@ -58,5 +87,5 @@ gulp.task('clean', function() {
 
 gulp.task(
   'default',
-  gulp.series('clean', 'html', 'sprite', 'image', 'sass', 'sass:watch')
+  gulp.series('clean', 'html', 'sprite', 'image', 'scripts', 'styles', 'watch')
 );
