@@ -1,0 +1,57 @@
+@mixin retinaSprite($retina-group) {
+	$sprite: nth($retina-group, 2);
+	$retina-sprite: nth($retina-group, 3);
+
+	$sprite-image: nth($sprite, 9);
+	$retina-sprite-image: nth($retina-sprite, 9);
+	$sprite-height: nth($sprite, 6);
+	$sprite-width: nth($sprite, 5);
+	content: '';
+	display: block;
+	background: url(../img/#{$sprite-image});
+	@include sprite-position($sprite);
+	width: $sprite-width;
+	height: $sprite-height;
+	margin-left: -$sprite-width / 2;
+	margin-top: -$sprite-height / 2;
+	overflow: hidden;
+
+	@include media(retina) {
+		background-image: url(../img/#{$retina-sprite-image});
+		@include sprite-background-size($sprite);
+	}
+
+}
+
+@mixin bgImgRetina($file, $type, $width, $height) {
+	background-image: url($file + '.' + $type);
+	
+	@include media(retina) {
+		background-image: url($file + '@2x.' + $type);
+		background-size: $width $height;
+	}
+}
+
+
+@mixin media($break) {
+	@if $break == tablet {
+		@media (min-width: 650px) { @content; }
+	}
+	@else if $break == desktop {
+		@media (min-width: 940px) { @content; }
+	}
+	@else if $break {
+		@media (min-width: $break) { @content; }
+	}
+	@else if $break == retina {
+		@media
+			only screen and (-webkit-min-device-pixel-ratio: 2),
+			only screen and (   min--moz-device-pixel-ratio: 2),
+			only screen and (     -o-min-device-pixel-ratio: 2/1),
+			only screen and (        min-device-pixel-ratio: 2),
+			only screen and (                min-resolution: 192dpi),
+			only screen and (                min-resolution: 2dppx) {
+				@content;
+			}
+	}
+}

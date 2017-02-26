@@ -14,50 +14,112 @@ $partner-hobby-coffee-x: 0px;
 $partner-hobby-coffee-y: 0px;
 $partner-hobby-coffee-offset-x: 0px;
 $partner-hobby-coffee-offset-y: 0px;
-$partner-hobby-coffee-width: 17px;
+$partner-hobby-coffee-width: 16px;
 $partner-hobby-coffee-height: 17px;
-$partner-hobby-coffee-total-width: 36px;
+$partner-hobby-coffee-total-width: 35px;
 $partner-hobby-coffee-total-height: 35px;
 $partner-hobby-coffee-image: 'sprite.png';
-$partner-hobby-coffee: (0px, 0px, 0px, 0px, 17px, 17px, 36px, 35px, 'sprite.png', 'partner-hobby-coffee', );
+$partner-hobby-coffee: (0px, 0px, 0px, 0px, 16px, 17px, 35px, 35px, 'sprite.png', 'partner-hobby-coffee', );
 $partner-hobby-msg-name: 'partner-hobby-msg';
-$partner-hobby-msg-x: 0px;
-$partner-hobby-msg-y: 19px;
-$partner-hobby-msg-offset-x: 0px;
-$partner-hobby-msg-offset-y: -19px;
+$partner-hobby-msg-x: 18px;
+$partner-hobby-msg-y: 0px;
+$partner-hobby-msg-offset-x: -18px;
+$partner-hobby-msg-offset-y: 0px;
 $partner-hobby-msg-width: 17px;
 $partner-hobby-msg-height: 16px;
-$partner-hobby-msg-total-width: 36px;
+$partner-hobby-msg-total-width: 35px;
 $partner-hobby-msg-total-height: 35px;
 $partner-hobby-msg-image: 'sprite.png';
-$partner-hobby-msg: (0px, 19px, 0px, -19px, 17px, 16px, 36px, 35px, 'sprite.png', 'partner-hobby-msg', );
+$partner-hobby-msg: (18px, 0px, -18px, 0px, 17px, 16px, 35px, 35px, 'sprite.png', 'partner-hobby-msg', );
 $partner-hobby-science-name: 'partner-hobby-science';
-$partner-hobby-science-x: 19px;
+$partner-hobby-science-x: 18px;
 $partner-hobby-science-y: 19px;
-$partner-hobby-science-offset-x: -19px;
+$partner-hobby-science-offset-x: -18px;
 $partner-hobby-science-offset-y: -19px;
 $partner-hobby-science-width: 13px;
 $partner-hobby-science-height: 16px;
-$partner-hobby-science-total-width: 36px;
+$partner-hobby-science-total-width: 35px;
 $partner-hobby-science-total-height: 35px;
 $partner-hobby-science-image: 'sprite.png';
-$partner-hobby-science: (19px, 19px, -19px, -19px, 13px, 16px, 36px, 35px, 'sprite.png', 'partner-hobby-science', );
+$partner-hobby-science: (18px, 19px, -18px, -19px, 13px, 16px, 35px, 35px, 'sprite.png', 'partner-hobby-science', );
 $partner-hobby-tv-name: 'partner-hobby-tv';
-$partner-hobby-tv-x: 19px;
-$partner-hobby-tv-y: 0px;
-$partner-hobby-tv-offset-x: -19px;
-$partner-hobby-tv-offset-y: 0px;
-$partner-hobby-tv-width: 17px;
-$partner-hobby-tv-height: 17px;
-$partner-hobby-tv-total-width: 36px;
+$partner-hobby-tv-x: 0px;
+$partner-hobby-tv-y: 19px;
+$partner-hobby-tv-offset-x: 0px;
+$partner-hobby-tv-offset-y: -19px;
+$partner-hobby-tv-width: 16px;
+$partner-hobby-tv-height: 16px;
+$partner-hobby-tv-total-width: 35px;
 $partner-hobby-tv-total-height: 35px;
 $partner-hobby-tv-image: 'sprite.png';
-$partner-hobby-tv: (19px, 0px, -19px, 0px, 17px, 17px, 36px, 35px, 'sprite.png', 'partner-hobby-tv', );
-$spritesheet-width: 36px;
+$partner-hobby-tv: (0px, 19px, 0px, -19px, 16px, 16px, 35px, 35px, 'sprite.png', 'partner-hobby-tv', );
+$partner-icon-coffee-2x-name: 'partner-icon-coffee@2x';
+$partner-icon-coffee-2x-x: 0px;
+$partner-icon-coffee-2x-y: 0px;
+$partner-icon-coffee-2x-offset-x: 0px;
+$partner-icon-coffee-2x-offset-y: 0px;
+$partner-icon-coffee-2x-width: 32px;
+$partner-icon-coffee-2x-height: 34px;
+$partner-icon-coffee-2x-total-width: 70px;
+$partner-icon-coffee-2x-total-height: 70px;
+$partner-icon-coffee-2x-image: 'sprite@2x.png';
+$partner-icon-coffee-2x: (0px, 0px, 0px, 0px, 32px, 34px, 70px, 70px, 'sprite@2x.png', 'partner-icon-coffee@2x', );
+$partner-icon-msg-2x-name: 'partner-icon-msg@2x';
+$partner-icon-msg-2x-x: 36px;
+$partner-icon-msg-2x-y: 0px;
+$partner-icon-msg-2x-offset-x: -36px;
+$partner-icon-msg-2x-offset-y: 0px;
+$partner-icon-msg-2x-width: 34px;
+$partner-icon-msg-2x-height: 32px;
+$partner-icon-msg-2x-total-width: 70px;
+$partner-icon-msg-2x-total-height: 70px;
+$partner-icon-msg-2x-image: 'sprite@2x.png';
+$partner-icon-msg-2x: (36px, 0px, -36px, 0px, 34px, 32px, 70px, 70px, 'sprite@2x.png', 'partner-icon-msg@2x', );
+$partner-icon-science-2x-name: 'partner-icon-science@2x';
+$partner-icon-science-2x-x: 36px;
+$partner-icon-science-2x-y: 38px;
+$partner-icon-science-2x-offset-x: -36px;
+$partner-icon-science-2x-offset-y: -38px;
+$partner-icon-science-2x-width: 26px;
+$partner-icon-science-2x-height: 32px;
+$partner-icon-science-2x-total-width: 70px;
+$partner-icon-science-2x-total-height: 70px;
+$partner-icon-science-2x-image: 'sprite@2x.png';
+$partner-icon-science-2x: (36px, 38px, -36px, -38px, 26px, 32px, 70px, 70px, 'sprite@2x.png', 'partner-icon-science@2x', );
+$partner-icon-tv-2x-name: 'partner-icon-tv@2x';
+$partner-icon-tv-2x-x: 0px;
+$partner-icon-tv-2x-y: 38px;
+$partner-icon-tv-2x-offset-x: 0px;
+$partner-icon-tv-2x-offset-y: -38px;
+$partner-icon-tv-2x-width: 32px;
+$partner-icon-tv-2x-height: 32px;
+$partner-icon-tv-2x-total-width: 70px;
+$partner-icon-tv-2x-total-height: 70px;
+$partner-icon-tv-2x-image: 'sprite@2x.png';
+$partner-icon-tv-2x: (0px, 38px, 0px, -38px, 32px, 32px, 70px, 70px, 'sprite@2x.png', 'partner-icon-tv@2x', );
+$spritesheet-width: 35px;
 $spritesheet-height: 35px;
 $spritesheet-image: 'sprite.png';
 $spritesheet-sprites: ($partner-hobby-coffee, $partner-hobby-msg, $partner-hobby-science, $partner-hobby-tv, );
-$spritesheet: (36px, 35px, 'sprite.png', $spritesheet-sprites, );
+$spritesheet: (35px, 35px, 'sprite.png', $spritesheet-sprites, );
+$retina-spritesheet-width: 70px;
+$retina-spritesheet-height: 70px;
+$retina-spritesheet-image: 'sprite@2x.png';
+$retina-spritesheet-sprites: ($partner-icon-coffee-2x, $partner-icon-msg-2x, $partner-icon-science-2x, $partner-icon-tv-2x, );
+$retina-spritesheet: (70px, 70px, 'sprite@2x.png', $retina-spritesheet-sprites, );
+
+// These "retina group" variables are mappings for the naming and pairing of normal and retina sprites.
+//
+// The list formatted variables are intended for mixins like `retina-sprite` and `retina-sprites`.
+$partner-hobby-coffee-group-name: 'partner-hobby-coffee';
+$partner-hobby-coffee-group: ('partner-hobby-coffee', $partner-hobby-coffee, $partner-icon-coffee-2x, );
+$partner-hobby-msg-group-name: 'partner-hobby-msg';
+$partner-hobby-msg-group: ('partner-hobby-msg', $partner-hobby-msg, $partner-icon-msg-2x, );
+$partner-hobby-science-group-name: 'partner-hobby-science';
+$partner-hobby-science-group: ('partner-hobby-science', $partner-hobby-science, $partner-icon-science-2x, );
+$partner-hobby-tv-group-name: 'partner-hobby-tv';
+$partner-hobby-tv-group: ('partner-hobby-tv', $partner-hobby-tv, $partner-icon-tv-2x, );
+$retina-groups: ($partner-hobby-coffee-group, $partner-hobby-msg-group, $partner-hobby-science-group, $partner-hobby-tv-group, );
 
 // The provided mixins are intended to be used with the array-like variables
 //
@@ -109,6 +171,34 @@ $spritesheet: (36px, 35px, 'sprite.png', $spritesheet-sprites, );
   @include sprite-height($sprite);
 }
 
+// The `retina-sprite` mixin sets up rules and a media query for a sprite/retina sprite.
+//   It should be used with a "retina group" variable.
+//
+// The media query is from CSS Tricks: https://css-tricks.com/snippets/css/retina-display-media-query/
+//
+// $icon-home-group: ('icon-home', $icon-home, $icon-home-2x, );
+//
+// .icon-home {
+//   @include retina-sprite($icon-home-group);
+// }
+@mixin sprite-background-size($sprite) {
+  $sprite-total-width: nth($sprite, 7);
+  $sprite-total-height: nth($sprite, 8);
+  background-size: $sprite-total-width $sprite-total-height;
+}
+
+@mixin retina-sprite($retina-group) {
+  $normal-sprite: nth($retina-group, 2);
+  $retina-sprite: nth($retina-group, 3);
+  @include sprite($normal-sprite);
+
+  @media (-webkit-min-device-pixel-ratio: 2),
+         (min-resolution: 192dpi) {
+    @include sprite-image($retina-sprite);
+    @include sprite-background-size($normal-sprite);
+  }
+}
+
 // The `sprites` mixin generates identical output to the CSS template
 //   but can be overridden inside of SCSS
 //
@@ -118,6 +208,19 @@ $spritesheet: (36px, 35px, 'sprite.png', $spritesheet-sprites, );
     $sprite-name: nth($sprite, 10);
     .#{$sprite-name} {
       @include sprite($sprite);
+    }
+  }
+}
+
+// The `retina-sprites` mixin generates a CSS rule and media query for retina groups
+//   This yields the same output as CSS retina template but can be overridden in SCSS
+//
+// @include retina-sprites($retina-groups);
+@mixin retina-sprites($retina-groups) {
+  @each $retina-group in $retina-groups {
+    $sprite-name: nth($retina-group, 1);
+    .#{$sprite-name} {
+      @include retina-sprite($retina-group);
     }
   }
 }

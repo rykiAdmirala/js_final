@@ -16,7 +16,7 @@ var gulp = require('gulp'),
 gulp.task('scripts', function(cb) {
   return pump([
       gulp.src('src/js/*.js'),
-      // uglifyjs(),
+      uglifyjs(),
       gulp.dest('www/js/'),
       livereload()
     ],
@@ -24,7 +24,7 @@ gulp.task('scripts', function(cb) {
   );
 });
 
-/* Making Styles */
+/* Compiling and prefixing Styles */
 gulp.task('styles', function (cb) {
   return pump([
       gulp.src('src/css/*.scss'),
@@ -34,7 +34,7 @@ gulp.task('styles', function (cb) {
             browsers: ['>0.01%'],
             cascade: false
       }),
-      cleanCSS({compatibility: 'ie8'}),
+      // cleanCSS({compatibility: 'ie8'}),
       sourcemaps.write(),
       gulp.dest('www/css'),
       livereload()
@@ -53,9 +53,11 @@ gulp.task('watch', function () {
 
 /* Making sprite */
 gulp.task('sprite', function () {
-  var spriteData = gulp.src('src/img/sprite/*.*').pipe(spritesmith({
+  var spriteData = gulp.src('src/img/sprite/*.png').pipe(spritesmith({
     padding: 2,
+    retinaSrcFilter: ['src/img/sprite/*@2x.png'],
     imgName: 'sprite.png',
+    retinaImgName: 'sprite@2x.png',
     cssName: '_sprite.scss'
   }));
   
